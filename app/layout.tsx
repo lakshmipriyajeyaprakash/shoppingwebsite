@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import HeaderTop from "./components/HeaderTop";
+import HeaderMain from "./components/HeaderMain";
+import Navbar from "./components/Navbar";
+import MobNavBar from "./components/MobNavBar";
+import Footer from "./components/Footer";
+import 'slick-carousel/slick/slick.css';  // is mandatory to use slide function
+import "slick-carousel/slick/slick-theme.css"; //  is mandatory to use slide function
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +23,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <HeaderTop />
+        <HeaderMain />
+        <Navbar />
+        <MobNavBar />
+        {children}<Footer /></body>
     </html>
   );
 }
